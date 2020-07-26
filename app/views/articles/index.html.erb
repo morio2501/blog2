@@ -1,0 +1,17 @@
+<% @articles.each do |article| %>
+<h2> <%= article.title %> </h2>
+<p> <%= article.text %></p>
+<% end %>
+
+
+
+<h1>新規記事作成</h1>
+
+<%= form_for :article, url:articles_path do |f| %>
+<p>
+	<%= f.text_field :title %><br>
+	<%= f.text_area :text %><br>
+	<%= f.submit %>
+</p>
+
+<% end %>
